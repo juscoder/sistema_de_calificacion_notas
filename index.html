@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos de CCS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styele.css">
+    <title>Formulario de promedio</title>
+</head>
+<body>
+    <div class="container col-8 my-5 br-2 rounded">
+        <div class="row g-3">
+            <div class="col-4 order-md-last">
+                <div class="card text-center bg-warning">
+                    <h4>Resultados</h4>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Nombre:</h6>
+                            <span class="text-muted" id="nombres"></span>
+                        </div>
+                        
+                    </li>
+                    <!-- <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Nota 1</h6>
+                            
+                        </div>
+                        <span class="text-muted" id="not1">18</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Nota 2</h6>
+                            
+                        </div>
+                        <span class="text-muted" id="not2">19</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Nota 3</h6>
+                            
+                        </div>
+                        <span class="text-muted" id="not3">20</span>
+                    </li> -->
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Total:</h6>
+                            
+                        </div>
+                        <span class="text-muted" id="total2"></span>
+                    </li>
+                    <!-- <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="text-info">Observación</h6>
+                            <span class="text-muted">Ninguna...</span>
+                        </div>
+                        
+                    </li> -->
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Promedio:</h6>
+                        </div>
+                        <span class="text-muted" id="prom2"></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>Calificación:</h6>
+                            <span class="text-muted" id="calific2"></span>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div class="col-8">
+                <div class="card bg-info text-center">
+                    <h3>Promediar las Notas</h3>
+                </div>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="firstname">Nombres</label>
+                            <input type="text" id="nombre" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese datos del alumno
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="lastname">Apellidos</label>
+                            <input type="text" id="apellido" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese datos del alumno
+                            </div>
+                        </div>
+                        <div class="col-4 mt-3">
+                            <label class="form-label" for="zip">Nota 1 </label>
+                            <input type="text" id="nota1" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese la nota 1
+                             </div>
+                        </div>
+                        <div class="col-4 mt-3">
+                            <label class="form-label" for="zip">Nota 2 </label>
+                            <input type="text" id="nota2" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese la nota 2
+                             </div>
+                        </div>
+                        <div class="col-4 mt-3">
+                            <label class="form-label" for="zip">Nota 3 </label>
+                            <input type="text" id="nota3" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese la nota 3
+                             </div>
+                        </div>                     
+                     
+                       
+                    </div>
+                    <hr class="mt-5">
+                    <div class="form-check">
+                        <!-- <input type="checkbox" class="form-check-input"> -->
+                        <label class="form-check-label">Al hacer click en los botones se verá el resultados del Alumno.</label>
+                    </div>
+                    <hr>
+                  
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="submit" class="btn btn-info btn-block mb-3" onclick="names();">Nombres</button>
+                        <button type="button" class="btn btn-primary btn-block mb-3" onclick="total();">Total</button>
+                        <button type="button" class="btn btn-warning btn-block mb-3" onclick="promedio();">Promediar</button>
+                        <button type="button" class="btn btn-success btn-block mb-3" onclick="calificacion();">Calificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <!-- <div class="" id="resultado">
+            
+            <div id="head1"><h4>Total</h4></div>
+            <p id="total"></p>
+
+            <div id="head2"><h4>Promedio</h4></div>
+            <p id="prom"></p>
+
+            <div id="head3"><h4>Calificación</h4></div>
+            <p id="calific"></p>
+        </div> -->
+    </div>  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/promediar.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+    </script>
+    <!-- Script de bootsatrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
